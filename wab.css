@@ -1,0 +1,192 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  /* Background video styling */
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.5) saturate(1.2);
+    background-color: black;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #dde6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000; /* fallback */
+  }
+  .weather-app {
+    background-color: rgba(128, 0, 128, 0.6); /* semi-transparent purple */
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 350px;
+    box-shadow: 0 16px 40px rgba(75, 0, 130, 0.9);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    animation: fadeInScale 0.8s ease forwards;
+    opacity: 0;
+    transform: scale(0.9);
+    z-index: 1;
+    position: relative;
+  }
+  h1 {
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #d9b3ff;
+    text-shadow: 0 0 8px #9c6bff;
+    animation: slideInDown 0.7s ease forwards;
+    opacity: 0;
+  }
+  form {
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: center;
+    animation: slideInUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  input[type="text"] {
+    width: 70%;
+    padding: 12px 18px;
+    border-radius: 40px 0 0 40px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #3e1a4e;
+    font-weight: 500;
+    box-shadow: inset 0 0 10px #9155d8;
+    transition: box-shadow 0.3s ease;
+  }
+  input[type="text"]:focus {
+    box-shadow: inset 0 0 14px #b27cff;
+  }
+  button {
+    width: 30%;
+    padding: 12px 18px;
+    border-radius: 0 40px 40px 0;
+    border: none;
+    background: linear-gradient(135deg, #9055d8, #6939b8);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 8px 18px rgba(105, 57, 184, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button:hover {
+    background: linear-gradient(135deg, #6939b8, #4a2484);
+    transform: scale(1.05);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+  .weather-info {
+    margin-top: 24px;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+  .location {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #dabaff;
+    text-shadow: 0 0 10px #b085ff;
+  }
+  .temp {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #cfa3ff;
+    text-shadow: 0 0 16px #a672ff;
+  }
+  .desc {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #d7bfff;
+    text-shadow: 0 0 10px #9e70ff;
+  }
+  .details {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #b8a0ff;
+    text-shadow: 0 0 6px #785aff;
+  }
+  .error {
+    margin-top: 24px;
+    color: #ffb6d6;
+    font-weight: 700;
+    text-shadow: 0 0 8px #d460a4;
+    animation: fadeIn 0.7s ease forwards;
+    opacity: 0;
+  }
+  .weather-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 14px;
+    filter: drop-shadow(0 0 8px #7a52ff);
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+  }
+
+  /* Animations */
+  @keyframes fadeInScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes slideInDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes slideInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeInDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+</style>
