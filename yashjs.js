@@ -45,7 +45,7 @@
       errorMessage.style.opacity = 1;
       return;
     }
-    const apiKey = 'f2c86bbc49c9c709940ec7335408344a';
+    const apiKey = 'put api here';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
 
     try {
